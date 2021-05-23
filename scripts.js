@@ -12,14 +12,38 @@ let btt2 = document.querySelector('#btt2');
 let btt3 = document.querySelector('#btt3');
 
 btn1.addEventListener('click', ()=>{
-    img.src = 'Images/image5.jpg';
-    img2.src = 'Images/image1.jpg';
+    img.src = 'Images/Bikes/honda.jpeg';
+    img2.src = 'Images/Bikes/bmw.png';
+    img3.src = 'Images/Bikes/Yamaha.png';
+    img4.src = 'Images/Bikes/super.png';
+    img5.src = 'Images/Bikes/royal.jpg';
+    img6.src = 'Images/Bikes/harley.jpg';
+    img7.src = 'Images/Bikes/Ducati.jpg';
+    img8.src = 'Images/Bikes/Suzuki.jpg';
+    img9.src = 'Images/Bikes/united.jpg';
 })
 
 btn2.addEventListener('click', ()=>{
-    img.src = 'Images/image3.jpg';
+    img.src = 'Images/Trucks/chervolt.jpg';
+    img2.src = 'Images/Trucks/ford.jpg';
+    img3.src = 'Images/Trucks/honda.jpg';
+    img4.src = 'Images/Trucks/jac.jpg';
+    img5.src = 'Images/Trucks/jeep.jpg';
+    img6.src = 'Images/Trucks/gmc.jpeg';
+    img7.src = 'Images/Trucks/hino.png';
+    img8.src = 'Images/Trucks/ram.png';
+    img9.src = 'Images/Trucks/isuzu.jpg';
+
 })
 
 btn3.addEventListener('click', ()=>{
-    img.src = 'Images/image2.jpg';
+    img.src = 'Images/honda.jpg';
+    img2.src = 'Images/icons8-kia-144.png';
+    img3.src = 'Images/MG.jpg';
+    img4.src = 'Images/icons8-suzuki-144.png';
+    img5.src = 'Images/hyundai.jpg';
+    img6.src = 'Images/nissan.jpg';
+    img7.src = 'Images/faw-logo.jpg';
+    img8.src = 'Images/toyota.jpg';
+    img9.src = 'Images/proton.jpg';
 })
