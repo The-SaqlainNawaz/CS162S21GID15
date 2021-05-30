@@ -3,112 +3,191 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel = "stylesheet" href="Css/style.css">
-    <!---- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>-->   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <meta http-equiv="X-UA_Compatible" content="IE=edge">
+        <link rel = "stylesheet" href="css/style.css">
+        <!--Lightslider.css link-->
+        <link rel="stylesheet" href="css/lightslider.css">
+        <script type="text/javascript" src="js/Jquery.js"></script>
+        <script type="text/javascript" src="js/lightslider.js"></script>
+        <title>AutomotiQ Sell,Buy Vehicles</title>
+        <link rel="shortcut icon" href="Images/image1.jpg">
         
     </head>
-    <title>AutomotiQ Sell,Buy Vehicles</title>
+
+    
     <body>
         
-        <nav class="navbar background">
-            <div class="logo"><img src="Images/image1.jpg" alt="Company Logo"></div>
-            <ul class = "nav-list">
-               <li><a href="#home" >Home</a></li>
-               <li><a href="#services" >Services</a></li>
-               <li><a href="#contact" >Contact Us</a></li>
-               <li><a href="#about">About Us</a></li>
+      <div id="navbar" class="topnav">
+        <img class="logo" src="Images/image1.jpg" alt="Comapny logo">
+        <a class="active" href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a class="login"  href="#"onclick="openForm()">Login In</a>
+        <a  class="SignUp" href="#"onclick="openForm()">Sign up</a>
+        <a href="javascript:void(0);" class="icon" onclick="getMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
 
-            </ul>
-            <div class="signup">
-            <ul class ="rightside">
-                <li><button class="btn btn-sm" onclick="openForm()">Login</button></li>
-                <li><button class="btn btn-sm" onclick="openForm()">Sign Up</button></li>
-            </ul>
-        </div>
-
-        </nav>
-        <!--DropDown Buttons-->
+      </div>
+      <script>
+        function getMenu() {
+          var y = document.getElementById("navbar");
+          if (y.className === "topnav") {
+            y.className += " responsive";
+          } else {
+            y.className = "topnav";
+          }
+        }
+        </script>
+        <div style="padding-top: 6px;"></div>
+        <div class="drpnav" id="myTopnav">
+          <a class="active"href="#Category">Categories</a>
         <div class="dropdown">
-          <button class="dropbtn">New Vehicles</button>
+          <button class="dropbtn">New Vehicles
+            <i class="fa fa-caret-down"></i>
+          </button>
           <div class="dropdown-content">
             <a href="#">Cars</a>
             <a href="#">Bikes</a>
             <a href="#">Trucks</a>
           </div>
         </div>
+        
         <div class="dropdown1">
-          <button class="dropbtn1">Used Vehicles</button>
+          <button class="dropbtn1">Used Vehicles
+            <i class="fa fa-caret-down"></i>
+          </button>
           <div class="dropdown-content1">
             <a href="#">Cars</a>
             <a href="#">Bikes</a>
             <a href="#">Trucks</a>
           </div>
         </div>
+        
         <div class="dropdown2">
-          <button class="dropbtn2">Rented Vehicles</button>
+          <button class="dropbtn2">Rented Vehicles
+            <i class="fa fa-caret-down"></i>
+          </button>
           <div class="dropdown-content2">
             <a href="#">Cars</a>
             <a href="#">Bikes</a>
             <a href="#">Trucks</a>
           </div>
         </div>
-        <div class="dropdown3">
-          <button class="dropbtn3">Auto Parts</button>
-          <div class="dropdown-content3">
-            <a href="#">Cars</a>
-            <a href="#">Bikes</a>
-            <a href="#">Trucks</a>
-          </div>
+        
+          <a class ="Cart"href="#Cart">Cart</a>
+          <a class ="Wallet"href="#Wallet">Wallet</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
-        <button class="dropbtn4">Wallet </button>
-        
-        <button class="dropbtn5">Cart</button>
-        
-         
+        <script>
+          function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "drpnav") {
+              x.className += " responsive";
+            } else {
+              x.className = "drpnav";
+            }
+          }
+          </script>
 
 
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-              <div class="numbertext">1 / 3</div>
-              <img src="Images/image2.jpg" style="width:100%">
-              <div class="text">All Brands Vehicles Available</div>
-            </div>
-            
-            <div class="mySlides fade">
-              <div class="numbertext">2 / 3</div>
-              <img src="Images/image4.jpg" style="width:100%">
-              <div class="text">Used Cars Also Available</div>
-            </div>
-            
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 3</div>
-              <img src="Images/image5.jpg" style="width:100%">
-              <div class="text">Also Have Rented Facility</div>
-            </div>
-            
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
-            </div>
-            <br>
-            
-            <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span> 
-              <span class="dot" onclick="currentSlide(2)"></span> 
-              <span class="dot" onclick="currentSlide(3)"></span> 
-            </div>
-
-
-           
+      <div style="padding-top: 6px;"></div>
+      <!-- Photo Grid -->
+      <div class="bg-image">
 
 
 
+<div class="bg-text">
+    <h2>Search Your Favourite Vehicle</h2>
+
+    <select id="dlistSelect" class="select">
+        <option value="" selected disabled>--Vehicle--</option>
+        <option value="1">Cars</option>
+        <option value="2">Bikes</option>
+        <option value="3">Trucks</option>
+        <option value="4">-None-</option>
+        </select>
+        <input class="input" type="text" readonly="readonly" id="displayOption"/>
+    <select id="dlistSelect1" class="select">
+        <option value="" selected disabled>-Category-</option>
+        <option value="1">New</option>
+        <option value="2">Used</option>
+        <option value="3">Rented</option>
+        <option value="4">-None-</option>
+        </select>
+        <input class="input" type="text" readonly="readonly" id="displayOption1"/>
+
+        <select id="dlistSelect2" class="select">
+            <option value="" selected disabled>-Make-</option>
+            <option value="1">Honda</option>
+            <option value="2">Corolla</option>
+            <option value="3">BMW</option>
+            <option value="4">-None-</option>
+            </select>
+            <input class="input" type="text" readonly="readonly" id="displayOption2"/>
+
+            <button class="Searchbtn btn-sm"><img src="Images/icon.png"></img>Search</button>
+          </div>
+</div>
+<script>
+
+
+$(function()
+{
+  $("#dlistSelect").change(function(){
+    var showvehicles =$("#dlistSelect option:selected").text();
+   // $("#displayOption").val(showvehicles);
+    var y = showvehicles.toString();
+    if(y=="-None-")
+    {
+     $("#displayOption").val(null);
+    }
+    else{
+      $("#displayOption").val(showvehicles);
+    }
+
+  })
+})
+$(function()
+{
+  $("#dlistSelect1").change(function(){
+    var showvehicl =$("#dlistSelect1 option:selected").text();
+   // $("#displayOption").val(showvehicles);
+    var y = showvehicl.toString();
+    if(y=="-None-")
+    {
+     $("#displayOption1").val(null);
+    }
+    else{
+      $("#displayOption1").val(showvehicl);
+    }
+
+  })
+})
+$(function()
+{
+  $("#dlistSelect2").change(function(){
+    var show =$("#dlistSelect2 option:selected").text();
+   // $("#displayOption").val(showvehicles);
+    var y = show.toString();
+    if(y=="-None-")
+    {
+     $("#displayOption2").val(null);
+    }
+    else{
+      $("#displayOption2").val(show);
+    }
+
+  })
+})
+</script>
+  
             <!--To Open Login in Form-->
             <div class="form-popup" id="myForm">
               <form   action="/action_page.php" class="form-container">
-                <h1 style="text-align: center;">Login</h1>
+                <h1 style="text-align: center; font-family: monospace;">Login</h1>
             
                 <label for="email"><b>Email</b></label>
                 <input type="text" placeholder="Enter Email" name="email" required>
@@ -129,9 +208,7 @@
                   document.getElementById("myForm").style.display = "none";
                 }
                 </script>
-            
-
-
+  
             <script>
             var slideIndex = 1;
             showSlides(slideIndex);
@@ -165,16 +242,8 @@
 
 
         <!--Brand Gallery -->
-        <div class="category">
-          <h2>Brands Available</h2>
-          <div class="ok">
-            <button class ="btt" id = "btn1">Bikes</button>
-            <button class ="btt" id = "btn2">Trucks</button>
-            <button class ="btt" id = "btn3">Cars</button>
-            
-        </div>
-      
-
+        <h2>Brands Available</h2>
+        <section class="slider2">
         <div class="responsive">
           <div class="gallery">
             <a target="_blank" href="#">
@@ -188,7 +257,7 @@
         <div class="responsive">
           <div class="gallery">
             <a target="_blank" href="#">
-              <img  id="img2"src="Images/icons8-kia-144.png" alt="Kia" width="100" height="100">
+              <img  id="img2"src="Images/ki.jpg" alt="Kia" width="100" height="100">
             </a>
             
           </div>
@@ -206,7 +275,7 @@
         <div class="responsive">
           <div class="gallery">
             <a target="_blank" href="#">
-              <img id="img4" src="Images/icons8-suzuki-144.png" alt="Mountains" width="100" height="100">
+              <img id="img4" src="Images/si.jpg" alt="suzukki" width="100" height="100">
             </a>
            
           </div>
@@ -251,98 +320,196 @@
               <a target="_blank" href="#">
                 <img id="img9"src="Images/proton.jpg" alt="Proton" width="100" height="100">
               </a>
-              
             </div>
           </div>
-        
-         <!--- <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img10"src="Images/audi.png" alt="AUDI" width="100" height="100">
-              </a>
-              
-            </div>
-          </div>
-        
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img11"src="Images/bmw.jpg" alt="BMW" width="100" height="100">
-              </a>
-              
-            </div>
-          </div>
-        
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img12"src="Images/land.jpg" alt="Land" width="100" height="100">
-              </a>
-              
-            </div>
-          </div>
-        
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img13"src="Images/mercedes.png" alt="mercedes" width="100" height="100">
-              </a>
-              
-            </div>
-          </div>
-        
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img14"src="Images/Mitubishi.png" alt="Mitubishi" width="100" height="100">
-              </a>
-              
-            </div>
-          </div>
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img15"src="Images/roll.png" alt="Roll" width="100" height="100">
-              </a>
-              <div class="desc">Roll Royce</div>
-            </div>
-          </div>
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img16"src="Images/chervolt.png" alt="chervolt" width="100" height="100">
-              </a>
-             
-            </div>
-          </div>
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img17"src="Images/mastasg.jpg" alt="Mastang" width="100" height="100">
-              </a>
-              
-            </div>
-          </div>
-        
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="#">
-                <img id="img18"src="Images/mazda.jpg" alt="mazda" width="100" height="100">
-              </a>
-              
-            </div>
-          </div>
-          -->
-        
         <div class="clearfix"></div>
-        
+      </section>
+        <div class="category">
+          
+          <div class="ok">
+            <button class ="btt" id = "btn1">Bikes</button>
+            <button class ="btt" id = "btn2">Trucks</button>
+            <button class ="btt" id = "btn3">Cars</button>
+            
+        </div>
+      </div>
+    
+
 
 
         <div class="endline"></div>
 
       
     
-    <script src="scripts.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <h2 class="SD">Accessories By Category</h2>
+<section class="slider">
+  
+    <ul id="autoWidth" class="cs-hidden">
+      <li class="item-a">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/Products/carseat.jpg" alt="car seats pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car Seats</a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+      <li class="item-b">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/Products/speaker.jpg" alt="car speakers pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car Speakers</a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+      <li class="item-c">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/Products/Led.jpg" alt="car LED pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car LED Lights</a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+      <li class="item-d">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/Products/tyres.jpg" alt="car tyres pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car Tyres </a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+      <li class="item-e">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/Products/amplifier.jpg" alt="car amplifier pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car Amplifier </a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+      <li class="item-f">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/image2.jpg" alt="car amplifier pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car Amplifier </a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+      <li class="item-f">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/image5.jpg" alt="car amplifier pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car Amplifier </a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+      <li class="item-g">
+        <div class="box">
+          <!--iamge box-->
+          <div class="slide-img">
+            <!--detail box-->
+            <img src="Images/image5.jpg" alt="car amplifier pic">
+            <!--OverLayer-->
+            <div class="overlayer">
+              <a href="#" class="det-btn">Get Details</a>
+            </div>
+            </div>
+            <div class="detail-box">
+              <!--Type -->
+              <div class="type">
+                <a href="#">Car Amplifier </a>
+                <span> Genuine Parts </span>
+              </div>
+            </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+    
 
 
 

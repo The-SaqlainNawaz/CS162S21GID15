@@ -38,13 +38,21 @@ btn2.addEventListener('click', ()=>{
 
 btn3.addEventListener('click', ()=>{
     img.src = 'Images/honda.jpg';
-    img2.src = 'Images/icons8-kia-144.png';
+    img2.src = 'Images/ki.jpg';
     img3.src = 'Images/MG.jpg';
-    img4.src = 'Images/icons8-suzuki-144.png';
+    img4.src = 'Images/si.jpg';
     img5.src = 'Images/hyundai.jpg';
     img6.src = 'Images/nissan.jpg';
     img7.src = 'Images/faw-logo.jpg';
     img8.src = 'Images/toyota.jpg';
     img9.src = 'Images/proton.jpg';
 })
-
+$(document).ready(function() {
+    $('#autoWidth').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth').removeClass('cS-hidden');
+        } 
+    });  
+  });
