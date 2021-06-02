@@ -99,9 +99,9 @@ body, html {
 
 .bg-image {
   /* The image used */
-  background-image:url("/Users/Aadi/Documents/GitHub/CS162S21GID15/Images/image6.jpg");
+  background-image:url("https://kickstart.bikeexif.com/wp-content/uploads/2015/03/bmw-classic-motorcycle.jpg");
   
-  /* Add the blur effect */
+  
   
   
   /* Full height */
@@ -203,7 +203,7 @@ body, html {
   top: 20px;
  
   z-index: 9;
-  opacity: 0.8;
+  opacity: 1.2;
   padding-left: 90px;
   padding-top: 100px;
 }
