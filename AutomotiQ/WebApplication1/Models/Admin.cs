@@ -7,6 +7,11 @@ namespace WebApplication1.Models
 {
     public class Admin : Person, OperatinsVehicle
     {
+        public Admin(string name, string cnic, string email, string contactnumber, string city, string id)
+            : base(name, cnic, email, contactnumber, city, id)
+        {
+        }
+
         public List<UsedVehicle> usedVehicles { get; set; }
         public List<NewVehicles> newVehicles { get; set; }
         public List<RentableVehicle> rentableVehicles { get; set; }

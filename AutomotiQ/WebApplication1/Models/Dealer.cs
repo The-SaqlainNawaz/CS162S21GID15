@@ -5,8 +5,16 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
+
+    
     public class Dealer:Person,OperatinsVehicle
     {
+        public Dealer(string collectionName, string name, string cnic, string email, string contactnumber, string city, string id)
+            :base(name,cnic,email,contactnumber,city,id)
+        {
+            this.collectionName = collectionName;
+        }
+
         public List<UsedVehicle> usedVehicles { get; set; }
         public List<NewVehicles> newVehicles { get; set; }
         public List<RentableVehicle> rentableVehicles { get; set; }
@@ -15,6 +23,10 @@ namespace WebApplication1.Models
         public Cart hiscart { get; set; }
         public OperationParts operationParts { get; set; }
         public Cart cart { get; set; }
+
+
+
+
 
         public bool Caradd()
         {

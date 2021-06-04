@@ -7,6 +7,11 @@
 
 <script src="https://kit.fontawesome.com/e64e6f73db.js" crossorigin="anonymous"></script>
 <link rel="shortcut icon" href="Images/image1.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
   body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -464,15 +469,15 @@ hr {
             <div class="col-50">
               <h3>Personal Detail</h3>
               <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-              <input type="text" id="fname" name="firstname" placeholder="Sharjeel">
+              <input type="text" id="fname" name="firstname" placeholder="Sharjeel" required>
               <label for="cname"><i class="fa fa-id-card-o" ></i> CNIC</label>
-                  <input type="text" id="cnic" name="CNIC" placeholder="XXXXX-1234567-X">
+                  <input type="text" id="cnic" name="CNIC" placeholder="XXXXX-1234567-X"> required
               
               <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-              <input type="text" id="adr" name="address" placeholder="W. 15th Street">
+              <input type="text" id="adr" name="address" placeholder="W. 15th Street" required>
               <label for="city"><i class="fa fa-institution"></i> City</label>
               
-              <select name="cities" id="city" class="City">
+              <select name="cities" id="city" class="City" required>
                   <option value="" selected disabled>-Select-</option>
                   <option value="1">Gujranwala</option>
                   <option value="2">Lahore</option>
@@ -487,13 +492,13 @@ hr {
               <h3>Further Details</h3>
               
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
-              <input type="text" id="email" name="email" placeholder="isharjeel@gmail.com">
+              <input type="text" id="email" name="email" placeholder="isharjeel@gmail.com" required>
               <label for="password"><i class='fas fa-key' style='font-size:17px'></i> Password</label>
-              <input type="password" id="pass" name="Password" placeholder="digits and alphabets,1 special character (Must)">
+              <input type="password" id="pass" name="Password" placeholder="digits and alphabets,1 special character (Must)" required>
               <label for="repeat"> <i class='fas fa-mask' style='font-size:17px'></i> Repeat Password</label>
-              <input type="password" id="repeatPass" name="Repeat" placeholder="Must be same as above">
+              <input type="password" id="repeatPass" name="Repeat" placeholder="Must be same as above" required>
               <label for="Contact"><i class="fa fa-phone"></i> Contact No</label>
-              <input type="text" id="conatctNo" name="No" placeholder="03123456789">
+              <input type="text" id="conatctNo" name="No" placeholder="03123456789" required>
             </div>
   
             
@@ -501,7 +506,7 @@ hr {
           </div>
           
           
-          <input type="button" value="SignUp" class="btn" style="float: left;">
+          <input type="button" value="SignUp" class="btn" style="float: left;" onclick="saveusers()">
           <input type="button" value="Cancel" class="btn" id="cancelbtn" onclick="document.getElementById('id02').style.display='none'" >
         
      
@@ -521,6 +526,44 @@ hr {
 
 
 <script>
+//saveuerfunction
+
+function saveusers()
+{
+  var password=$("$pass").val();
+  var repeatpassword=$("$repeatPass").val();
+
+  if(password===repeatpassword)
+  {
+  var name=$("$fname").val();
+  var cnic=$("$cnic").val();
+  var address=$("$adr").val();
+  var city=$("$city").val();
+  var email=$("$email").val();
+  password=$("$pass").val();
+  var contactNumber=$("$conatctNo").val();
+  var obj
+  {
+    Name;name,
+    CNIC;cnic,
+    Address;address,
+    City;city,
+    Email;email,
+    Passwor;password,
+    ContactNo;contactNumber;
+  }
+  console.log(obj);
+  }
+  else
+  {
+  alert("Password Missmatch");
+  }
+
+  
+}
+
+
+
 // Get the modal
 var modal = document.getElementById('id01');
 var model1=document.getElementById('id02');
