@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://kit.fontawesome.com/e64e6f73db.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="Images/image1.jpg">
+    <link rel="shortcut icon" href="~/Images/image1.jpg">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -47,21 +47,9 @@ button:hover {
   padding: 10px 18px;
   background-color: #f44336;
 }
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
 .container {
   padding: 16px;
+  width:90%;
 }
 
 span.psw {
@@ -434,7 +422,6 @@ hr {
         <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="img_avatar2.png" alt="Avatar" class="avatar">
             </div>
 
             <div class="container">
@@ -442,9 +429,9 @@ hr {
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required><br />
+                <input type="password" placeholder="Enter Password" name="psw" required><br/>
 
-                <button style="width:280px" type="submit">Login</button>
+                <button style="width:100%" type="submit">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
@@ -498,7 +485,7 @@ hr {
                                 <label for="repeat"> <i class='fas fa-mask' style='font-size:17px'></i> Repeat Password</label>
                                 <input type="password" id="repeatPass" name="Repeat" placeholder="Must be same as above" required>
                                 <label for="Contact"><i class="fa fa-phone"></i> Contact No</label>
-                                <input type="text" id="conatctNo" name="No" placeholder="03123456789" required>
+                                <input type="text" id="contactNo" name="No" placeholder="03123456789" required>
                             </div>
 
 
@@ -515,47 +502,52 @@ hr {
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
+    
+   
     <script>
         //saveuerfunction
 
         function saveusers() {
-            var password = $("$pass").val();
-            var repeatpassword = $("$repeatPass").val();
+            var password = $("#pass").val();
+            var repeatpassword = $("#repeatPass").val();
 
             if (password === repeatpassword) {
-                var name = $("$fname").val();
-                var cnic = $("$cnic").val();
-                var address = $("$adr").val();
-                var city = $("$city").val();
-                var email = $("$email").val();
-                password = $("$pass").val();
-                var contactNumber = $("$conatctNo").val();
-                var obj
+                var name = $("#fname").val();
+                var cnic = $("#cnic").val();
+                var address = $("#adr").val();
+                var city = $("#city").find(":selected").text();
+                var email = $("#email").val();
+                password = $("#pass").val();
+                var contactNumber = $("#contactNo").val();
+                var obj=
                 {
-                    Name; name,
-                        CNIC; cnic,
-                            Address; address,
-                                City; city,
-                                    Email; email,
-                                        Passwor; password,
-                                            ContactNo; contactNumber;
+                    Name: name,
+                    CNIC: cnic,
+                    Address: address,
+                     City: city,
+                     Email: email,
+                     Passwor: password,
+                    ContactNo: contactNumber,
                 }
                 console.log(obj);
+                $.ajax({
+                    url: 'https://localhost:44377/api/PersonController/UserSignup',
+                    type: 'POST',
+                    data: JSON.stringify(obj),
+                    contentType: "appliction/json;charset=utf-8",
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (data) {
+
+                    }
+                });
+                
             }
             else {
                 alert("Password Missmatch");
             }
-
+            
 
         }
 
@@ -571,11 +563,11 @@ hr {
                 modal.style.display = "none";
             }
         }
-        window.onclick = function (event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
+       /* window.onclick = function (event) {
+            if (event.target == modal0) {
+                modal0.style.display = "none";
             }
-        }
+        }*/
     </script>
 
 </body>

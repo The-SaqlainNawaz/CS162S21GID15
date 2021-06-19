@@ -1,0 +1,28 @@
+﻿
+<div id="mytable"></div>
+@section scripts{
+<script>
+    $.ajax({
+        url: 'https://localhost:44377/api/PersonController/serSigupreterive',
+        type: 'GET',
+
+        contentType: "appliction/json;charset=utf-8",
+        success: function (data) {
+
+            var htmlstr = "<table>";
+            for (var i = 0; i < data.length; i++) {
+                
+                htmlstr += "<tr><td>" + data[i].Name + "</td>" +
+                    "<tr><td>" + OKK + "</td>" +
+                    "<tr><td>" + data[i].City + "</td></tr>";
+            }
+            htmlstr += "</table>";
+            $("#mytable").html(htmlstr);
+
+        },
+        error: function (data) {
+
+        }
+    });
+</script>
+    }

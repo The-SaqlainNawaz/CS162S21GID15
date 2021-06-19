@@ -14,5 +14,20 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public ActionResult Admin()
+        {
+            return View();
+        }
+
+        public ActionResult Customer()
+        {
+            return View();
+        }
+
+        public ActionResult ListofCustomers()
+        {
+            return View();
+        }
+
     }
 }
