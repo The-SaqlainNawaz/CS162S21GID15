@@ -12,6 +12,10 @@ namespace WebApplication1.Models
         {
            
         }
+        public Customer()
+        {
+
+        }
         public Cart cart { get; set; }
     }
 }

@@ -17,7 +17,8 @@ namespace WebApplication1.Models
             this.wallet = null;
             this.id = id;
         }
-
+        protected Person()
+        { }
         public string name { get; set; }
         public string cnic { get; set; }
         public string email { get; set; }
