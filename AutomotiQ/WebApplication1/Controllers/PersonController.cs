@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                StreamWriter writer = new StreamWriter("C:/test.txt", true);
+                StreamWriter writer = new StreamWriter("C:/BS Computer Science/Text.txt", true);
                 writer.WriteLine(person.name + "," + person.email);
                 writer.Flush();
                 writer.Close();
@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
         public  List<Customer> userSigupreterive()
         {
             List<Customer> customers = new List<Customer>();
-            StreamReader reader = new StreamReader("C:/test.txt");
+            StreamReader reader = new StreamReader("C:/BS Computer Science/Text.txt");
             String line = reader.ReadLine();
             while(String.IsNullOrEmpty(line))
             {
