@@ -429,7 +429,7 @@ hr {
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required><br/>
+                <input type="password" placeholder="Enter Password" name="psw" required><br />
 
                 <button style="width:100%" type="submit">Login</button>
                 <label>
@@ -493,7 +493,8 @@ hr {
                         </div>
 
 
-                        <input type="button" value="SignUp" class="btn" style="float: left;" onclick="saveusers()">
+                        <input type="button" value="SignUp" class="btn" style="float: left;" onclick="saveusers()"/>
+                      
                         <input type="button" value="Cancel" class="btn" id="cancelbtn" onclick="document.getElementById('id02').style.display='none'">
 
 
@@ -502,74 +503,78 @@ hr {
             </div>
         </div>
     </div>
-    
-   
-    <script>
-        //saveuerfunction
 
-        function saveusers() {
-            var password = $("#pass").val();
-            var repeatpassword = $("#repeatPass").val();
 
-            if (password === repeatpassword) {
-                var name = $("#fname").val();
-                var cnic = $("#cnic").val();
-                var address = $("#adr").val();
-                var city = $("#city").find(":selected").text();
-                var email = $("#email").val();
-                password = $("#pass").val();
-                var contactNumber = $("#contactNo").val();
-                var obj=
-                {
-                    Name: name,
-                    CNIC: cnic,
-                    Address: address,
-                     City: city,
-                     Email: email,
-                     Passwor: password,
-                    ContactNo: contactNumber,
-                }
-                console.log(obj);
-                $.ajax({
-                    url: 'https://localhost:44377/api/Person/UserSignup',
-                    type: 'POST',
-                    data: JSON.stringify(obj),
-                    contentType: "appliction/json;charset=utf-8",
-                    success: function (data) {
-                        alert(data);
-                    },
-                    error: function (data) {
 
+ 
+        <script>
+            //saveuerfunction
+
+            function saveusers() {
+                var password = $("#pass").val();
+                var repeatpassword = $("#repeatPass").val();
+
+                if (password === repeatpassword) {
+                    var name = $("#fname").val();
+                     var cnic = $("#cnic").val();
+                      var address = $("#adr").val();
+                     var city = $("#city").find(":selected").text();
+                    var email = $("#email").val();
+                    password = $("#pass").val();
+                     var contactNumber = $("#contactNo").val();
+                    var obj =
+                    {
+                        Name: name,
+                         CNIC: cnic,
+                         Address: address,
+                          City: city,
+                        Email: email,
+                          Passwor: password,
+                          ContactNo: contactNumber,
                     }
-                });
-                
+                    console.log(obj);
+                    $.ajax({
+                        type: "POST",
+                        url: "https://localhost:44377/api/Customer/UserSignup",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                           
+                        },
+                        failure: function (response) {
+                            
+                        }
+                    }); 
+                    alert(true);
+
+                }
+                else {
+                    alert("Password Missmatch");
+                }
+
+
             }
-            else {
-                alert("Password Missmatch");
+
+
+
+            // Get the modal
+            var modal = document.getElementById('id01');
+            var model0 = document.getElementById('id02');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
             }
-            
+                       /* window.onclick = function (event) {
+              if (event.target == modal0) {
+                  modal0.style.display = "none";
+              }
+          }*/
+        </script>
+      
 
-        }
-
-
-
-        // Get the modal
-        var modal = document.getElementById('id01');
-        var model1 = document.getElementById('id02');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-       /* window.onclick = function (event) {
-            if (event.target == modal0) {
-                modal0.style.display = "none";
-            }
-        }*/
-    </script>
-
-</body>
+    </body>
 </html>
 

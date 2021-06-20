@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public class Customer : Person
+    public class Customer:Person
     {
         public Customer( string name, string cnic, string email, string contactnumber, string city, string id)
             : base(name, cnic, email, contactnumber, city, id)
@@ -17,5 +17,6 @@ namespace WebApplication1.Models
 
         }
         public Cart cart { get; set; }
+       
     }
 }

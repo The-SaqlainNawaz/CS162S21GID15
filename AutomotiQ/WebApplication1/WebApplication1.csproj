@@ -162,6 +162,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\StartuppageController.cs" />
@@ -200,6 +201,24 @@
     <Compile Include="Models\Vehicles.cs" />
     <Compile Include="Models\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.cs">
+      <DependentUpon>testmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="testmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="testmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="testmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testmodel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>DtatabaseModel.tt</DependentUpon>
     </Compile>
@@ -320,6 +339,16 @@
     <Content Include="css\Admin.css" />
     <Content Include="css\lightslider.css" />
     <Content Include="css\style.css" />
+    <Content Include="testmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>testmodel.edmx</DependentUpon>
+      <LastGenOutput>testmodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="testmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>testmodel.edmx</DependentUpon>
+      <LastGenOutput>testmodel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -337,6 +366,13 @@
     <Content Include="Views\Startuppage\Admin.cshtml" />
     <Content Include="Views\Startuppage\Customer.cshtml" />
     <Content Include="Views\Startuppage\ListofCustomers.cshtml" />
+    <EntityDeploy Include="testmodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>testmodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="testmodel.edmx.diagram">
+      <DependentUpon>testmodel.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
