@@ -35,7 +35,6 @@
           <Property Name="Contact_Number" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Collection_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="UsersInformationEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -55,7 +54,6 @@
                 <ScalarProperty Name="Contact_Number" ColumnName="Contact Number" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="E_mail" ColumnName="E mail" />
-                <ScalarProperty Name="Collection_Name" ColumnName="Collection Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

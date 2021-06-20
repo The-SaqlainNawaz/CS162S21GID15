@@ -12,13 +12,13 @@ namespace WebApplication1
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class customerTable
     {
-        public string ID { get; set; }
         public string Name { get; set; }
-        public string CNIC { get; set; }
-        public string Contact_Number { get; set; }
-        public string City { get; set; }
-        public string E_mail { get; set; }
+        public string cnic { get; set; }
+        public string email { get; set; }
+        public string contnumber { get; set; }
+        public string city { get; set; }
+        public string id { get; set; }
     }
 }

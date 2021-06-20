@@ -10,7 +10,6 @@
           <ScalarProperty Name="Contact_Number" ColumnName="Contact Number" />
           <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="E_mail" ColumnName="E mail" />
-          <ScalarProperty Name="Collection_Name" ColumnName="Collection Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

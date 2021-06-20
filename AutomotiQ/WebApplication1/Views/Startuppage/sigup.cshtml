@@ -398,7 +398,6 @@ hr {
     flex-direction:column;
   }*@
 
-}
 
 
 
@@ -534,18 +533,17 @@ hr {
                     }
                     console.log(obj);
                     $.ajax({
-                        type: "POST",
-                        url: "https://localhost:44377/api/Customer/UserSignup",
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        success: function (response) {
-                           
+                        url: 'https://localhost:44377/api/Customer/UserSignup',
+                        type: 'POST',
+                        data: JSON.stringify(obj),
+                        contentType: "appliction/json;charset=utf-8",
+                        success: function (data) {
+                            alert(true);
                         },
-                        failure: function (response) {
-                            
+                        error: function (data) {
+
                         }
-                    }); 
-                    alert(true);
+                    });
 
                 }
                 else {

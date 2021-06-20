@@ -167,6 +167,24 @@
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\StartuppageController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="customerTable.cs">
+      <DependentUpon>customerwalamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="customerwalamodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerwalamodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="customerwalamodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerwalamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="customerwalamodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerwalamodel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DtatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,6 +247,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="customerwalamodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>customerwalamodel.edmx</DependentUpon>
+      <LastGenOutput>customerwalamodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="customerwalamodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>customerwalamodel.edmx</DependentUpon>
+      <LastGenOutput>customerwalamodel.cs</LastGenOutput>
+    </Content>
     <Content Include="DtatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DtatabaseModel.Context.cs</LastGenOutput>
@@ -329,6 +357,13 @@
     </EntityDeploy>
     <Content Include="DtatabaseModel.edmx.diagram">
       <DependentUpon>DtatabaseModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="customerwalamodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>customerwalamodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="customerwalamodel.edmx.diagram">
+      <DependentUpon>customerwalamodel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
