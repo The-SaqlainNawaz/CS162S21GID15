@@ -424,7 +424,7 @@ hr {
 
         <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input id="username" type="text" placeholder="Enter Username" name="uname" required>
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required><br />
@@ -509,11 +509,14 @@ hr {
 
     <script>
 
+            function verifyuser() {
+                var username = $("#username").val();
+                var repeatpassword = $("#repeatPass").val();
+            }
+
 
         function Saveusers() {
 
-            var random = Math.random();
-            var n = random.toString();
             var password = $("#pass").val();
             var repeatpassword = $("#repeatPass").val();
 

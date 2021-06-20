@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/Admin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <title>AdminPage</title>
     <link rel="shortcut icon" href="~/Images/image1.jpg">
 
@@ -31,9 +32,11 @@
             }
         }
     </script>
-    
+
     <!--Search Panel Admin-->
     <div class="bg-image">
+
+
         <h2 class="fly">Lets Fly With AutomotiQ..</h2>
 
         <div class="bg-text">
@@ -46,7 +49,7 @@
                 <option value="3">Trucks</option>
                 <option value="4">-None-</option>
             </select>
-            <input class="inputt" type="text" readonly="readonly" id="displayOption" style="color:orangered" />
+            <input class="inputt" type="text" readonly="readonly" id="displayOption"style="color:orangered" />
             <select id="dlistSelect1" class="select">
                 <option value="" selected disabled>-Category-</option>
                 <option value="1">New</option>
@@ -54,21 +57,23 @@
                 <option value="3">Rented</option>
                 <option value="4">-None-</option>
             </select>
-            <input class="inputt" type="text" readonly="readonly" id="displayOption1"style="color:orangered" />
+            <input class="inputt" type="text" readonly="readonly" id="displayOption1"style="color:orangered"/>
 
-            <select id="dlistSelectt2" class="select">
+            <select id="dlistSelect2" class="select">
                 <option value="" selected disabled>-Make-</option>
                 <option value="1">Honda</option>
                 <option value="2">Corolla</option>
                 <option value="3">BMW</option>
                 <option value="4">-None-</option>
             </select>
-            <input class="inputt" type="text" readonly="readonly" id="displayOptionn2" style="color:orangered" />
+            <input class="inputt" type="text" readonly="readonly" id="displayOption2"style="color:orangered" />
 
             <button class="Searchbtn btn-sm"><img src="~/Images/icon.png"></img>Search</button>
         </div>
     </div>
     <script>
+
+
         $(function () {
             $("#dlistSelect").change(function () {
                 var showvehicles = $("#dlistSelect option:selected").text();
@@ -98,15 +103,15 @@
             })
         })
         $(function () {
-            $("#dlistSelectt2").change(function () {
-                var show = $("#dlistSelectt2 option:selected").text();
+            $("#dlistSelect2").change(function () {
+                var show = $("#dlistSelect2 option:selected").text();
                 // $("#displayOption").val(showvehicles);
                 var y = show.toString();
                 if (y == "-None-") {
-                    $("#displayOptionn2").val(null);
+                    $("#displayOption2").val(null);
                 }
                 else {
-                    $("#displayOptionn2").val(show);
+                    $("#displayOption2").val(show);
                 }
 
             })

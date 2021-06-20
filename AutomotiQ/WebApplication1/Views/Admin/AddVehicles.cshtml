@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/e64e6f73db.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
+    <title>AddVehiclesPage</title>
+    <link rel="shortcut icon" href="Images/image1.jpg">
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 17px;
+            padding: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: -ms-flexbox; /* IE10 */
+
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            -ms-flex: 25%; /* IE10 */
+            flex: 25%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%; /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 100%; /* IE10 */
+            flex: 100%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            background-image: url('https://cdn.motor1.com/images/mgl/NREwG/s1/2021-jeep-wrangler-rubicon-392-front-view.jpg');
+            background-size: cover;
+            background-color: #f2f2f2;
+            padding: 20px 30px 85px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            color: #cacaca;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+
+        a {
+            color: #2196F3;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        #city {
+            color: black;
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 12px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+            width: 50%;
+        }
+
+            .btn:hover {
+                background-color: #45a049;
+            }
+
+        #cancelbtn {
+            background-color: #f44336;
+        }
+
+            #cancelbtn:hover {
+                background-color: #cc4b42;
+            }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+
+    </style>
+</head>
+<body>
+
+    <h2>Vehicle's Information </h2>
+
+    <div class="row">
+        <div class="col-75">
+            <div class="container">
+                <form action="/action_page.php">
+
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>Vehicle Detail</h3>
+                            <label for="color"><i class='fas fa-car'></i>Vehicle's Name</label>
+                            <select name="cities" id="city" class="chosen">
+                                <option value="" selected disabled>-Select-</option>
+                                <option value="1">Nissan</option>
+                                <option value="2">Proteus</option>
+                                <option value="3">Corolla</option>
+                                <option value="4">Honda</option>
+                                <option value="5">Toyata</option>
+                                <option value="6">Suzuki</option>
+                                <option value="7">Mastang</option>
+                                <option value="8">BMW</option>
+                                <option value="10">Jac</option>
+                                <option value="11">Ford</option>
+                                <option value="12">United</option>
+                                <option value="13">Ducati</option>
+                                <option value="14">Harley Davidson</option>
+                                <option value="15">Royal Enfield</option>
+                                <option value="16">Yamaha</option>
+                                <option value="17">Super Power</option>
+                                <option value="18">KIA</option>
+                            </select>
+
+                            <label for="color"><i class='fas fa-car'></i> Colour</label>
+
+                            <select name="cities" id="city" class="chosen">
+                                <option value="" selected disabled>-Select-</option>
+                                <option value="1">White</option>
+                                <option value="2">Black</option>
+                                <option value="3">Grey</option>
+                                <option value="4">Dark-Grey</option>
+                                <option value="5">Blue</option>
+                            </select>
+                            <label for="price"><i class="fa fa-envelope"></i> Price</label>
+                            <input type="text" id="price" name="Pricees" placeholder="1550000 PKR.">
+
+
+
+                        </div>
+                        <div class="col-50">
+                            <h3>Further Details</h3>
+
+                            <label for="model"><i class='fas fa-car'></i> Vehicle Model</label>
+                            <select name="cities" id="city" class="chosen">
+                                <option value="" selected disabled>-Select-</option>
+                                <option value="1">Honda Accord</option>
+                                <option value="2">Honda City</option>
+                                <option value="3">Honda Civic</option>
+                                <option value="4">Nissan Moco</option>
+                                <option value="5">Nissan Dayz</option>
+                                <option value="6">KIA Sportage</option>
+                                <option value="7">KIA Picanto</option>
+                                <option value="8">Corolla XLI</option>
+                                <option value="10">Corolla GLI</option>
+                                <option value="11">Suzuki Mehran</option>
+                                <option value="12">Toyota Corolla</option>
+                                <option value="13">MG Gloster</option>
+                                <option value="14">MG HS 2021</option>
+                                <option value="15">Faw J5M</option>
+                                <option value="16">Yamaha cd70</option>
+                                <option value="17">Super Power cd100</option>
+                                <option value="18">United cd70</option>
+                                <option value="19">Royal Enfield Bullet 500</option>
+                                <option value="20">Harley Sportster Models</option>
+                            </select>
+                            <label for="password"><i class='fas fa-car-alt' style='font-size:17px'></i> Engine Capacity</label>
+                            <input type="password" id="pass" name="Password" placeholder="2000CC">
+                            <label for="Contact"><i class='fas fa-id-card-alt'></i> Detrack ID</label>
+                            <input type="text" id="conatctNo" name="No" placeholder="ID101">
+                        </div>
+
+
+
+                    </div>
+
+
+                    <input type="submit" value="Add" class="btn" style="float: left;">
+                    <input type="submit" value="Cancel" class="btn" id="cancelbtn" onclick="window.location.href=''">
+                    
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+$(".chosen").chosen();
+
+    </script>
+
+</body>
+</html>
+
+

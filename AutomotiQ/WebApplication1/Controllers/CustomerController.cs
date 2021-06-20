@@ -75,6 +75,8 @@ namespace WebApplication1.Controllers
                 customer.wallet = null;
                 customers.Add(customer);
                    }
+            Showroom sh = Showroom.getindtance();
+            sh.customers = customers;
             return customers;
 
         }
