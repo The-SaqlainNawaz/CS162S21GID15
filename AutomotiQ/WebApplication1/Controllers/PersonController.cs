@@ -58,8 +58,8 @@ namespace WebApplication1.Controllers
              var list = usersInformationEntities.Users.ToList();
              foreach(var dbo in list)
              {
-                 Customer customer = new Customer(dbo.Name,dbo.CNIC,dbo.E_mail,dbo.Contact_Number,dbo.City,dbo.ID);
-                 customers.Add(customer);
+                 //Customer customer = new Customer(dbo.Name,dbo.CNIC,dbo.E_mail,dbo.Contact_Number,dbo.City,dbo.ID);
+                 //customers.Add(customer);
            
              }
             return customers;

@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using WebApplication1.Models;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Models
 {
-    public class CustomerController : ApiController
+    public class DefaultController : ApiController
     {
         [HttpPost]
         public bool UserSignup(Customer person)
         {
-            CustomerTableEntities1 db = new CustomerTableEntities1();
+            CustomerTableEntities db = new CustomerTableEntities();
             try
             {
                 // StreamWriter writer = new StreamWriter("C:/BS Computer Science/Text.txt", true);
@@ -22,7 +20,7 @@ namespace WebApplication1.Controllers
                 //writer.Flush();
                 //writer.Close();
 
-               
+
                 customerTable customer = new customerTable();
                 customer.Name = person.name;
                 customer.email = person.email;
@@ -31,20 +29,27 @@ namespace WebApplication1.Controllers
                 customer.id = person.id;
                 customer.contnumber = person.contactnumber;
                 db.customerTables.Add(customer);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+
+                }
                 return true;
             }
-            
+
             catch (Exception ex)
             {
                 return false;
             }
-           
+
         }
         [HttpGet]
         public List<Customer> userSigupreterive()
         {
-              List<Customer> customers = new List<Customer>();
+            List<Customer> customers = new List<Customer>();
             /*StreamReader reader = new StreamReader("C:/BS Computer Science/Text.txt");
             String line = reader.ReadLine();
             while (!String.IsNullOrEmpty(line))
@@ -59,19 +64,20 @@ namespace WebApplication1.Controllers
          */
             CustomerTableEntities usersInformationEntities = new CustomerTableEntities();
             var list = usersInformationEntities.customerTables.ToList();
-                   foreach(var dbo in list)
-                   {
-                       Customer customer = new Customer();
+            foreach (var dbo in list)
+            {
+                Customer customer = new Customer();
                 customer.email = dbo.email;
                 customer.name = dbo.Name;
                 customer.city = dbo.city;
                 customer.id = dbo.id;
                 customer.contactnumber = dbo.contnumber;
                 customer.cnic = dbo.cnic;
-                       customers.Add(customer);
-                   }
+                customers.Add(customer);
+            }
             return customers;
 
         }
     }
+
 }

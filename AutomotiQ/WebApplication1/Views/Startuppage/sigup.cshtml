@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+﻿
+
     <title>AutomotiQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -405,8 +404,8 @@ hr {
 
 
     </style>
-</head>
-<body>
+
+
     <div class="header">
         <div class="bg-text">
             <h1>AutomotiQ</h1>
@@ -457,7 +456,7 @@ hr {
                                 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
                                 <input type="text" id="fname" name="firstname" placeholder="Sharjeel" required>
                                 <label for="cname"><i class="fa fa-id-card-o"></i> CNIC</label>
-                                <input type="text" id="cnic" name="CNIC" placeholder="XXXXX-1234567-X"> required
+                                <input type="text" id="cnic" name="CNIC" placeholder="XXXXX-1234567-X">
 
                                 <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
                                 <input type="text" id="adr" name="address" placeholder="W. 15th Street" required>
@@ -492,8 +491,9 @@ hr {
                         </div>
 
 
-                        <input type="button" value="SignUp" class="btn" style="float: left;" onclick="saveusers()"/>
-                      
+                          <input type="button" value="SignUp" class="btn" id="botn" style="float: left;" onclick="Saveusers()"/>
+
+
                         <input type="button" value="Cancel" class="btn" id="cancelbtn" onclick="document.getElementById('id02').style.display='none'">
 
 
@@ -502,41 +502,46 @@ hr {
             </div>
         </div>
     </div>
+    
 
 
 
  
         <script>
-            //saveuerfunction
-
-            function saveusers() {
+         
+            
+            function Saveusers() {
+              
+              
                 var password = $("#pass").val();
                 var repeatpassword = $("#repeatPass").val();
 
                 if (password === repeatpassword) {
-                    var name = $("#fname").val();
-                     var cnic = $("#cnic").val();
-                      var address = $("#adr").val();
-                     var city = $("#city").find(":selected").text();
-                    var email = $("#email").val();
+                    var Name = $("#fname").val();
+                    var Cnic = $("#cnic").val();
+                    // var Address = $("#adr").val();
+                    var City = $("#city").find(":selected").text();
+                    var Email = $("#email").val();
                     password = $("#pass").val();
-                     var contactNumber = $("#contactNo").val();
+                    var contactNumber = $("#contactNo").val();
                     var obj =
                     {
-                        Name: name,
-                         CNIC: cnic,
-                         Address: address,
-                          City: city,
-                        Email: email,
-                          Passwor: password,
-                          ContactNo: contactNumber,
+                        name: Name,
+                        cnic: Cnic,
+                        //   Address: address,
+                        city: City,
+                        email: Email,
+                        Passwor: password,
+                        contactnumber: contactNumber
+
                     }
                     console.log(obj);
                     $.ajax({
+
                         url: 'https://localhost:44377/api/Customer/UserSignup',
                         type: 'POST',
                         data: JSON.stringify(obj),
-                        contentType: "appliction/json;charset=utf-8",
+                        contentType: "application/json;charset=utf-8",
                         success: function (data) {
                             alert(true);
                         },
@@ -544,17 +549,11 @@ hr {
 
                         }
                     });
-
                 }
                 else {
                     alert("Password Missmatch");
                 }
-
-
             }
-
-
-
             // Get the modal
             var modal = document.getElementById('id01');
             var model0 = document.getElementById('id02');
@@ -565,14 +564,6 @@ hr {
                     modal.style.display = "none";
                 }
             }
-                       /* window.onclick = function (event) {
-              if (event.target == modal0) {
-                  modal0.style.display = "none";
-              }
-          }*/
         </script>
-      
 
-    </body>
-</html>
 

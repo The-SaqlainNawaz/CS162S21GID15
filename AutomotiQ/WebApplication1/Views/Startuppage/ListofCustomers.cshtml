@@ -6,18 +6,12 @@
         url: 'https://localhost:44377/api/Customer/userSigupreterive',
         type: 'GET',
 
-        contentType: "appliction/json;charset=utf-8",
+        contentType: "application/json;charset=utf-8",
         success: function (data) {
-
-            var htmlstr = "<table>";
-            for (var i = 0; i < data.length; i++) {
-                
-                htmlstr += "<tr><td>" + data[i].Name + "</td>" +
-                    "<tr><td>" + OKK + "</td>" +
-                    "<tr><td>" + data[i].City + "</td></tr>";
-            }
-            htmlstr += "</table>";
-            $("#mytable").html(htmlstr);
+            alert(data);
+           
+            },
+           
 
         },
         error: function (data) {
