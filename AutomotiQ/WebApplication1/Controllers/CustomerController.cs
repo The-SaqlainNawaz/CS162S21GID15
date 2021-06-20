@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public bool UserSignup(Customer person)
         {
-            CustomerTableEntities1 db = new CustomerTableEntities1();
+            
             try
             {
                 // StreamWriter writer = new StreamWriter("C:/BS Computer Science/Text.txt", true);
@@ -22,16 +22,17 @@ namespace WebApplication1.Controllers
                 //writer.Flush();
                 //writer.Close();
 
-               
+                CustomerTableEntities1 db = new CustomerTableEntities1();
                 customerTable customer = new customerTable();
                 customer.Name = person.name;
-                customer.email = person.email;
                 customer.cnic = person.cnic;
+                customer.email = person.email;
+                customer.contnumber = person.contactnumber;
                 customer.city = person.city;
                 customer.id = person.id;
-                customer.contnumber = person.contactnumber;
+                
                 db.customerTables.Add(customer);
-                db.SaveChanges();
+               db.SaveChanges();
                 return true;
             }
             
