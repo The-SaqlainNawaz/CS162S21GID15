@@ -14,15 +14,16 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public bool UserSignup(Customer person)
         {
-            
+            CustomerTableEntities1 db = new CustomerTableEntities1();
             try
             {
                 // StreamWriter writer = new StreamWriter("C:/BS Computer Science/Text.txt", true);
                 //writer.WriteLine(person.name + "," + person.email);
                 //writer.Flush();
                 //writer.Close();
-
-                CustomerTableEntities1 db = new CustomerTableEntities1();
+                Random rnd = new Random();
+                int n=rnd.Next(1000);
+                person.id = n.ToString();
                 customerTable customer = new customerTable();
                 customer.Name = person.name;
                 customer.cnic = person.cnic;
@@ -32,15 +33,16 @@ namespace WebApplication1.Controllers
                 customer.id = person.id;
                 
                 db.customerTables.Add(customer);
-               db.SaveChanges();
-                return true;
+                
+                
             }
             
             catch (Exception ex)
             {
                 return false;
             }
-           
+            db.SaveChanges();
+            return true;
         }
         [HttpGet]
         public List<Customer> userSigupreterive()
@@ -69,7 +71,9 @@ namespace WebApplication1.Controllers
                 customer.id = dbo.id;
                 customer.contactnumber = dbo.contnumber;
                 customer.cnic = dbo.cnic;
-                       customers.Add(customer);
+                customer.cart = null;
+                customer.wallet = null;
+                customers.Add(customer);
                    }
             return customers;
 

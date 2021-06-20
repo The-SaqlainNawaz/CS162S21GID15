@@ -18,7 +18,7 @@ namespace WebApplication1.Models
         }
         
  
-       public Cart cart { get; set; }
+     public Cart cart { get; set; }
        
     }
 }

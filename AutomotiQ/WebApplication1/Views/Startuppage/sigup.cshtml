@@ -512,7 +512,8 @@ hr {
 
         function Saveusers() {
 
-
+            var random = Math.random();
+            var n = random.toString();
             var password = $("#pass").val();
             var repeatpassword = $("#repeatPass").val();
 
@@ -523,18 +524,16 @@ hr {
                 var City = $("#city").find(":selected").text();
                 var Email = $("#email").val();
                 password = $("#pass").val();
-                var contactNumber = $("#contactNo").val();
-                var ID = "01";
+                var contactNumber = $("#contactNo").val();               
+                var ID = "";               
                 var obj =
-                {
+                {    
                     name: Name,
                     cnic: Cnic,
-                    //   Address: address,
-                    email: Email,
+                    email: Email,                   
                     contactnumber: contactNumber,
-                    city: City,                  
-                    id:ID
-
+                    city: City,
+                    id: ID
                 }
                 console.log(obj);
                 $.ajax({

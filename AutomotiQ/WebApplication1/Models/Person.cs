@@ -14,8 +14,8 @@ namespace WebApplication1.Models
             this.email = email;
             this.contactnumber = contactnumber;
             this.city = city;
-            this.wallet = null;
             this.id = id;
+            this.wallet = null;
         }
         protected Person()
         { }
@@ -24,7 +24,8 @@ namespace WebApplication1.Models
           public string email { get; set; }
         public string contactnumber { get; set; }
         public string city { get; set; }
-        public Wallet wallet { get; set; }
+        
         public string id { get; set; }
+        public Wallet wallet { get; set; }
     }
 }
