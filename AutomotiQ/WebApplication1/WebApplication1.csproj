@@ -130,6 +130,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddVehicle.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddVehicle.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddVehicle.cs">
+      <DependentUpon>AddVehicle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddVehicle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddVehicle.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AddVehicle1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddVehicle.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -162,6 +180,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AdminAddVehiclesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -259,6 +278,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddVehicle.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AddVehicle.edmx</DependentUpon>
+      <LastGenOutput>AddVehicle.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AddVehicle.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AddVehicle.edmx</DependentUpon>
+      <LastGenOutput>AddVehicle1.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -398,6 +427,13 @@
     </EntityDeploy>
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="AddVehicle.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AddVehicle.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AddVehicle.edmx.diagram">
+      <DependentUpon>AddVehicle.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

@@ -9,8 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
-    <title>AddVehiclesPage</title>
-    <link rel="shortcut icon" href="Images/image1.jpg">
+    
+    <link rel="shortcut icon" href="~/Images/image1.jpg">
     <style>
         body {
             font-family: Arial;
@@ -42,8 +42,8 @@
         }
 
         .col-75 {
-            -ms-flex: 100%; /* IE10 */
-            flex: 100%;
+            -ms-flex: 75%; /* IE10 */
+            flex: 75%;
         }
 
         .col-25,
@@ -91,13 +91,15 @@
         }
 
         #city {
-            color: black;
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 12px;
-            cursor: pointer;
-            border: 1px solid #ccc;
             width: 100%;
+        }
+
+        #color {
+            width: 80%;
+        }
+
+        #model {
+            width: 80%;
         }
 
         .btn {
@@ -125,7 +127,11 @@
             }
 
         /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
-
+        @@media(max-width:800px) {
+            .row {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -140,6 +146,7 @@
                     <div class="row">
                         <div class="col-50">
                             <h3>Vehicle Detail</h3>
+
                             <label for="color"><i class='fas fa-car'></i>Vehicle's Name</label>
                             <select name="cities" id="city" class="chosen">
                                 <option value="" selected disabled>-Select-</option>
@@ -163,8 +170,7 @@
                             </select>
 
                             <label for="color"><i class='fas fa-car'></i> Colour</label>
-
-                            <select name="cities" id="city" class="chosen">
+                            <select name="cities" id="color" class="chosen">
                                 <option value="" selected disabled>-Select-</option>
                                 <option value="1">White</option>
                                 <option value="2">Black</option>
@@ -174,15 +180,14 @@
                             </select>
                             <label for="price"><i class="fa fa-envelope"></i> Price</label>
                             <input type="text" id="price" name="Pricees" placeholder="1550000 PKR.">
-
-
-
+                            <label for="price"><i class="fa fa-envelope"></i>No of Vehicles</label>
+                            <input type="text" id="stk" name="Stock" placeholder="5">
                         </div>
                         <div class="col-50">
                             <h3>Further Details</h3>
 
                             <label for="model"><i class='fas fa-car'></i> Vehicle Model</label>
-                            <select name="cities" id="city" class="chosen">
+                            <select name="cities" id="model" class="chosen">
                                 <option value="" selected disabled>-Select-</option>
                                 <option value="1">Honda Accord</option>
                                 <option value="2">Honda City</option>
@@ -204,19 +209,21 @@
                                 <option value="19">Royal Enfield Bullet 500</option>
                                 <option value="20">Harley Sportster Models</option>
                             </select>
-                            <label for="password"><i class='fas fa-car-alt' style='font-size:17px'></i> Engine Capacity</label>
-                            <input type="password" id="pass" name="Password" placeholder="2000CC">
+                            <label for="EngineCapacity"><i class='fas fa-car-alt' style='font-size:17px'></i> Engine Capacity</label>
+                            <input type="text" id="capacity" name="Password" placeholder="2000CC">
                             <label for="Contact"><i class='fas fa-id-card-alt'></i> Detrack ID</label>
-                            <input type="text" id="conatctNo" name="No" placeholder="ID101">
+                            <input type="text" id="Did" name="No" placeholder="ID101">
+                            
+
                         </div>
+                        
 
-
-
+                        <input type="button" value="Update" class="btn" style="float: left;" onclick="addvehicle()">
+                        <input type="button" value="Cancel" class="btn" id="cancelbtn">
                     </div>
 
 
-                    <input type="submit" value="Add" class="btn" style="float: left;">
-                    <input type="submit" value="Cancel" class="btn" id="cancelbtn" onclick="window.location.href=''">
+                   
                     
 
 
@@ -225,10 +232,47 @@
         </div>
     </div>
     <script type="text/javascript">
-$(".chosen").chosen();
-
+        $(".chosen").chosen();
+        
     </script>
+    <script>
+        function addvehicle() {
+            var Vehiclename = $("#city").find(":selected").text();
+            var Vehiclecolour = $("#color").find(":selected").text();
+            var Price = $("#price").val();
+            var Vehiclemodel = $("#model").find(":selected").text();
+            var Capacity = $("#capacity").val();
+            var detrack = $("#Did").val();
+            var stock = $("#stk").val();
+            var cat = "Car";          
+            var obj=
+            {
+                name: Vehiclename,
+                brand: Vehiclemodel,
+                color: Vehiclecolour,
+                price: Price,
+                stck: stock,
+                enginecap: Capacity,
+                idno: detrack,
+                category: cat
+                //Byte: null
+            }
+            console.log(obj);
+            $.ajax({
 
+                url: 'https://localhost:44377/api/AdminAddVehicles/AdminAddVeh',
+                type: 'POST',
+                data: JSON.stringify(obj),
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    alert(true);
+                },
+                error: function (data) {
+
+                }
+            });
+        }
+    </script>
 </body>
 </html>
 
